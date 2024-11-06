@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Personal Budget Tracker</h1>
+
+  <div class="form-container">
+    <input type="text" id="description" placeholder="Description" required>
+    <input type="number" id="amount" placeholder="Amount" required>
+    <select id="category">
+      <option value="Income">Income</option>
+      <option value="Expense">Expense</option>
+    </select>
+    <button onclick="addEntry()">Add Entry</button>
+  </div>
+
+  <h2>Budget Overview</h2>
+  <p>Total Income: <span id="total-income">$0</span></p>
+  <p>Total Expenses: <span id="total-expenses">$0</span></p>
+  <p>Remaining Balance: <span id="remaining-balance">$0</span></p>
+
+  <h2>Entries</h2>
+  <table id="entries-table">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <button onclick="exportToExcel()">Export to Excel</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
